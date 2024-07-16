@@ -6,12 +6,14 @@ class Movie(models.Model):
     title = models.CharField(max_length=200, verbose_name="Título")
     acclaimed = models.BooleanField(null=True, verbose_name="Aclamada")
     image = models.ImageField(blank=True, null=True, verbose_name="Imagen")
+    """
     director = models.CharField(max_length=255, null=True, verbose_name="Director")
     writer = models.CharField(max_length=255, null=True, verbose_name="Escritor")
     year = models.DateTimeField(null=True, verbose_name="Año")
     genre = models.CharField(max_length=255, null=True, verbose_name="Genero")
     description = models.TextField(null=True, verbose_name="Descripción")
     duration = models.CharField(max_length=255, null=True, verbose_name="Diración")
+    """
     movie_creation_date = models.DateTimeField(auto_now_add=True, null=True, verbose_name="Fecha de creacion registro de película")
     movie_modification_date = models.DateTimeField(auto_now=True, null=True, verbose_name="Fecha de modificación registro de película")
     
@@ -21,5 +23,5 @@ class Movie(models.Model):
     class Meta:
         verbose_name = "película"
         verbose_name_plural = "películas"
-        # ordering = ["-movie_creation_date"]   #   Lo que hace esto es apilar los objetos y los ordena por ultima fecha de creación.
+        ordering = ["-movie_creation_date"]   #   Lo que hace esto es apilar los objetos y los ordena por ultima fecha de creación.
         
