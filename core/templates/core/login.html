@@ -1,0 +1,47 @@
+{% extends "core/base.html" %}
+
+{% block title %} Iniciar Sesión | CAC-MOVIES {% endblock %}
+
+{% block content %}
+    {% load static %}
+    <!--<h1 style="color:brown">Registrarse</h1>-->
+    <body class="bodyRegistrarse">
+        
+        {% block header %}
+            <header class="headerRegistrarse">
+                <a class="anclaLogo" href="{% url 'home' %}">
+                    <i class="fas fa-film" aria-hidden="true"></i>
+                    <span>CAC-Movies</span>
+                </a>
+            </header>
+        {% endblock %}
+
+        <main id="main" class="main">
+            <section data-aos="zoom-in" data-aos-duration="1000" class="seccionRegistrarse">
+                <!--pongo get ya que en github pages da error el method post-->
+                <form action="" method="get">
+                    <h2 class="tituloRegistrarse">Iniciar Sesión</h2>
+                    <div>
+                        <input type="email" placeholder="Email" id="email" name="email">
+                        <div class="error-text"></div>
+                    </div>
+                    <div>
+                        <input type="password" placeholder="Contraseña" id="password" name="password">
+                        <div class="error-text"></div>
+                    </div>
+                    <div>
+                        <input class="boton" type="submit" value="Iniciar Sesión">
+                    </div>
+                    <div>
+                        <a id="ayuda" class="ayuda" href="registrarse.html">Registrarse</a>
+                    </div>
+                </form>
+            </section>
+        </main>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <script src="{% static 'core/js/valida_registrarse.js' %}"></script>
+    </body>
+{% endblock %}
