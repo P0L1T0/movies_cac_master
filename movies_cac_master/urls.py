@@ -23,7 +23,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', catalogue_views.home, name='home'),   #   Las comillas vacias indican que la pagina se encuentra en la raiz -> '/'
-    path('detail/', core_views.detail, name='detail'),   #
+    path('detail/', catalogue_views.detail, name='detail'),   #
     path('login/', core_views.login, name='login'),   #
     path('signup/', core_views.signup, name='signup')   #
 ]
