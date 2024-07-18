@@ -7,6 +7,7 @@ class Movie(models.Model):
     acclaimed = models.BooleanField(null=True, verbose_name="Aclamada")
     image = models.ImageField(blank=True, null=True, verbose_name="Imagen", upload_to="movies")
     description = models.TextField(null=True, verbose_name="Descripción")
+    video = models.TextField(null=True, verbose_name="Video")
     """
     director = models.CharField(max_length=255, null=True, verbose_name="Director")
     writer = models.CharField(max_length=255, null=True, verbose_name="Escritor")

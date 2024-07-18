@@ -66,9 +66,7 @@
                         </div>
                     </div>
 
-                {% endif %}
-
-            {% endfor %}
+               
            
     
           </section>
@@ -76,7 +74,8 @@
           <section class="trailer"  data-aos="fade-up" data-aos-offset="400" data-aos-delay="50" data-aos-duration="1000"  >
             <div class="contenedorTrailer">
                 <h2>Ver trailer</h2>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/RjNcTBXTk4I?si=7fnK8NtlxetW0d1R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+                <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/RjNcTBXTk4I?si=7fnK8NtlxetW0d1R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+                <iframe width="560" height="315" src="{{movie.video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
             <div class="contenedorInfo">
                 <div class="redes">
@@ -116,6 +115,10 @@
                 </div>
     
             </div>
+
+            {% endif %}
+
+            {% endfor %}
     
           </section>
     
