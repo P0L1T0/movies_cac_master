@@ -2,11 +2,14 @@
 
 {% block title %} Detalle | CAC-MOVIES {% endblock %}
 
+
+
 {% block content %}
     {% load static %}
     <!--<h1  style="color:blue">Detalles!</h1>-->
     <body>
         
+    
         {% block header %}
             <header class="header">
                 <nav class="navegacion">
@@ -25,40 +28,50 @@
 
         <main id="mainDetalle" class="mainDetalle">
           <section class="detalle"  data-aos="zoom-in" >
-            <div class="contenedorDetalle" >
-                <div class="imgDetalle">
-                    <img src="{% static 'core/assets/img/mario.jpg' %}" alt="mario pelicula 2023">
-                </div>
-                <div class="textoDetalle">
-                    <h1>The Super Mario Bros. Movie (2023)</h1>
-                    <p>04/05/2023 • Animation, Family, Adventure, Fantasy, Comedy • 1h 33m</p>
-                    <h2>Overview</h2>
-                    <p>While working underground to fix a water main, Brooklyn plumbers—and brothers—Mario and Luigi are transported down a mysterious pipe and wander into a magical new world. But when the brothers are separated, Mario embarks on an epic quest to find Luigi.</p>
-                    <div class="contenedorCreditos">
-                        <div>
-                            <h3>Aaron Horvath</h3>
-                            <p>Director</p>
+
+            <h1>Detalle del elemento con ID: {{ movie.id }}</h1>
+
+            {% for movie in movies %}
+
+                {% if movie.id == 21 %}
+
+                    <div class="contenedorDetalle" >
+                        <div class="imgDetalle">
+                            <img src="{{movie.image.url}}" alt="{{movie.title}}">
                         </div>
-                        <div>
-                            <h3>Michael Jelenic</h3>
-                            <p>Director</p>
-                        </div>
-                        <div>
-                            <h3>Matthew Fogel</h3>
-                            <p>Writer</p>
+                        <div class="textoDetalle">
+                            <h1>{{movie.title}}</h1>
+                            <!--
+                            <p>04/05/2023 • Animation, Family, Adventure, Fantasy, Comedy • 1h 33m</p>
+                            -->
+                            <h2>Overview</h2>
+                            <p>{{movie.description}}</p>
+                            <!--
+                            <div class="contenedorCreditos">
+                                <div>
+                                    <h3>Aaron Horvath</h3>
+                                    <p>Director</p>
+                                </div>
+                                <div>
+                                    <h3>Michael Jelenic</h3>
+                                    <p>Director</p>
+                                </div>
+                                <div>
+                                    <h3>Matthew Fogel</h3>
+                                    <p>Writer</p>
+                                </div>
+                            </div>
+                            -->
+                        
                         </div>
                     </div>
-                   
-                </div>
-            </div>
-           
-    
           </section>
     
           <section class="trailer"  data-aos="fade-up" data-aos-offset="400" data-aos-delay="50" data-aos-duration="1000"  >
             <div class="contenedorTrailer">
                 <h2>Ver trailer</h2>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/RjNcTBXTk4I?si=7fnK8NtlxetW0d1R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+                <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/RjNcTBXTk4I?si=7fnK8NtlxetW0d1R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+                <iframe width="560" height="315" src="{{movie.video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
             <div class="contenedorInfo">
                 <div class="redes">
@@ -98,6 +111,10 @@
                 </div>
     
             </div>
+
+            {% endif %}
+
+            {% endfor %}
     
           </section>
     
