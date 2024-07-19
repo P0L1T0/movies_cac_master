@@ -16,8 +16,8 @@
                     </a>
                     <ul class="listaNav">
                         <li class="listaItem"><a class="linkNav" href="#tendencias">Tendencias</a></li>
-                        <li class="listaItem"><a class="linkNav" href="{% url 'signup' %}">Registrarse</a></li>
-                        <li class="listaItem"><a class="linkNav iniciarSesion" href="{% url 'login' %}">Iniciar Sesión</a></li>
+                        <li class="listaItem"><a class="linkNav" href="{% url 'user:profile_create' %}">Registrarse</a></li>
+                        <li class="listaItem"><a class="linkNav iniciarSesion" href="{% url 'user:login' %}">Iniciar Sesión</a></li>
                     </ul>
                 </nav>
             </header>
@@ -27,7 +27,7 @@
             <section data-aos="zoom-in"  data-aos-duration="1000" class="sectionPrincipal">
                 <h1 class="tituloPrincipal">Películas y series ilimitadas <br> en un solo lugar</h1>
                 <h2 class="subtituloPrincipal">Disfruta donde quieras. <br> Cancela en cualquier momento.</h2>
-                <a class="botonRegistrarse" href="{% url 'signup' %}">Registrate</a>
+                <a class="botonRegistrarse" href="{% url 'user:profile_create' %}">Registrate</a>
 
             </section>
             <section data-aos="fade-up" data-aos-offset="300" data-aos-delay="50" data-aos-duration="1000" class="buscadorPrincipal">
