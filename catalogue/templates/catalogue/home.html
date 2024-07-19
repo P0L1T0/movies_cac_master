@@ -52,14 +52,15 @@
                 <br>
                 <h3 class="tituloSection">Las tendencias de hoy</h3>
                 <div class="peliculas">
-
+                    
+                    
                     <!--   Esta sera cada una de las Peliculas de Tendencias  (Objeto Movie) -->
 
                     {% for movie in movies %}
 
                         {% if movie.acclaimed == False %}
 
-                            <a href="{% url 'detail'  %}?id={{movie.id}}">
+                            <a href="{% url 'detail' %}">
                                 <h4></h4>
                                 <div class="pelicula">
                                 
@@ -78,6 +79,7 @@
                     {% endfor %}
 
                     <!--   (Fin Objeto Movie)   -->
+                   
 
                 </div>
                 <button class="boton anterior">Anterior</button>  

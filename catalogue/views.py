@@ -1,6 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from .models import Movie
-from flask import Flask , request as flask_rekest
 
 # Create your views here.
 
@@ -11,4 +10,3 @@ def home(request):
 def detail(request):   #   detalle
     movies = Movie.objects.all()
     return render(request, 'catalogue/detail.html',{'movies':movies})
-

@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
-import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -39,7 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+<<<<<<< HEAD
     'catalogue.apps.CatalogueConfig',
+=======
+    'catalogue',
+>>>>>>> 90340a7a28794ac60bba37df202fa2f78f14b77e
     'user',
     'base',
 ]
@@ -123,11 +126,10 @@ STATIC_URL = '/core/static/'
 
 STATICFILES_DIRS = [BASE_DIR / 'core/static/core']
 
-# Media Files
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGIN_URL = 'user:login'
+LOGIN_REDIRECT_URL = 'home'
+SIGNUP_URL = 'user:profile-create'
