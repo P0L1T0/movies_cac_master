@@ -17,6 +17,7 @@
                     <ul class="listaNav">
                         <li class="listaItem"><a class="linkNav" href="#tendencias">Tendencias</a></li>
                         <li class="listaItem"><a class="linkNav" href="{% url 'user:profile_create' %}">Registrarse</a></li>
+                        {% if request.user.is_authenticated %}
                         <li class="listaItem"><a class="linkNav iniciarSesion" href="{% url 'user:login' %}">Iniciar Sesión</a></li>
                     </ul>
                 </nav>
